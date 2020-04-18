@@ -36,10 +36,32 @@ element.appendChild(div);
 //$.getScript("/dist/js/run_prettify.js");
 refreshcode();
 
+var query = `
+query ($id: Int) { # Define which variables will be used in the query (id)
+  Media (id: $id, type: ANIME) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
+    id
+    title {
+      romaji
+      english
+      native
+    }
+  }
+}
+`;
+
+// Define our query variables and values that will be used in the query request
+var variables = {
+    id: 15125
+};
+
+
+
+
+
 $.ajax({
-    //data: {day: day, month: month, year: year},
-    url: 'https://api.thecatapi.com/v1/breeds',
-    method: 'GET', // or GET
+    data: {query: query, variables: variables},
+    url: 'https://graphql.anilist.co',
+    method: 'POST', // or GET
          success: function(msg) {
             var obj = msg;
  
