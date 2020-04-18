@@ -10,6 +10,7 @@ if (typeof(e) != 'undefined' && e != null)
 }
 var div = document.createElement("div");
 div.id = "tempdiv";
+// The following is the HTML for "Usage Examples"
 div.innerHTML = `<pre class="prettyprint" id="code">some other code I havent put in yet</pre>
 <pre class="prettyprint" id="code">$.ajax({
     var url = "https://api.thecatapi.com/v1/breeds" // set accordingly
@@ -43,6 +44,8 @@ $.ajax({
  
             
             var outdiv = document.getElementById("output");
+            
+            // The following is the HTML for "Output"
             outdiv.innerHTML = '<pre class="prettyprint" id="outpre"></pre>'
             
             outpre.innerHTML = JSON.stringify(obj, null, 4);
