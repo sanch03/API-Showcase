@@ -1,63 +1,59 @@
 //alert("loaded");
-// <pre class="prettyprint" id="code">
+
+var e =  document.getElementById('tempdiv');
+if (typeof(e) != 'undefined' && e != null)
+{
+    var el = document.getElementById("tempdiv");
+    el.parentNode.removeChild(el);
+
+  // Exists.
+}
 var div = document.createElement("div");
 div.id = "tempdiv";
-div.innerHTML = `
-<pre class="prettyprint" id="code">
-      
- 
-function getdetails(name) {
+div.innerHTML = `<pre class="prettyprint" id="code">some other code I havent put in yet</pre>
+<pre class="prettyprint" id="code">$.ajax({
+    var url = "https://api.thecatapi.com/v1/breeds" // set accordingly
+    url: url,
+    method: 'GET',
+         success: function(msg) {
+            var obj = msg;
+            console.log(obj);         
+         }
+});</pre>
 
 
 
 
-  var e = new XMLHttpRequest;
-  e.onreadystatechange = function() {
-      if (4 == e.readyState && 200 == e.status) {
-          var t = e.responseText;
 
-
-          console.log(t);
-var obj = JSON.parse(t);
-console.log(obj.entries[0]);
-$.getScript("/dist/js/"+obj.entries[0].Category+"/"+name+".js", function() {
-  //alert("Script loaded but not necessarily executed.");
-});
-//var val = JSON.parse(obj[0]);
-//console.log(val);
-document.getElementById("about").innerHTML = obj.entries[0].Description;
-document.getElementById("auth").innerHTML = obj.entries[0].Auth;
-document.getElementById("https").innerHTML = obj.entries[0].HTTPS;
-document.getElementById("cors").innerHTML = obj.entries[0].Cors;
-document.getElementById("url").href = obj.entries[0].Link;
-document.getElementById("iframe").src = "/"+obj.entries[0].Category+"/"+name+".html";
-var node = new PrettyJSON.view.Node({
-  el:document.getElementById('json'),
-  data:obj
-});
-node.expandAll;
-//document.getElementById('code').innerHTML = JSON.stringify(obj, null, 4);
-      }   
-  }
-  ,
-  e.open("GET", "https://api.publicapis.org/entries?title="+name, !0),
-  e.send(null)
-
-}
-    </pre>
 
 
 
 `;
-
-//var node = document.createTextNode("var code = document.createElement('code');");
-
-//pre.appendChild(node);
-
-
 var element = document.getElementById("cexample");
-
 element.appendChild(div);
-$.getScript("https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js", function() {
-   // alert("Script loaded but not necessarily executed.");
- });
+//$.getScript("/dist/js/run_prettify.js");
+refreshcode();
+
+$.ajax({
+    //data: {day: day, month: month, year: year},
+    url: 'https://api.thecatapi.com/v1/breeds',
+    method: 'GET', // or GET
+         success: function(msg) {
+            var obj = msg;
+ 
+            
+            var outdiv = document.getElementById("output");
+            outdiv.innerHTML = '<pre class="prettyprint" id="outpre"></pre>'
+            
+            outpre.innerHTML = JSON.stringify(obj, null, 4);
+            outdiv.appendChild(outpre);
+            refreshcode();  
+           // $.getScript("/dist/js/run_prettify.js");
+
+             
+ 
+         }
+
+
+});
+
