@@ -14,7 +14,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/dist/css/adminlte.css">
   <link rel="stylesheet" href="/dist/css/desert.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -39,20 +39,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul id="sidel" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item">
-                <a href="/index.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+               <li class="nav-item" id="Home">
+                <a onclick="vchange('Home')" href="#" class="nav-link active">
+                  <!-- <i class="nav-icon fas fa-th"></i> -->
                   <p>
-                    Home (In progress)
+                    Home
                    <!-- <span class="right badge badge-danger">New</span> -->
                   </p>
                 </a>
               </li>
-          <li class="nav-item has-treeview menu-closed">
-            <a href="#" class="nav-link active">
+
+              <!--Animals Start-->
+          <!-- <li class="nav-item has-treeview menu-closed">
+
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Animals
@@ -60,20 +63,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             <ul class="nav nav-treeview">
+
               <li class="nav-item">
-                <a href="/Animals/Cat-Facts.html" class="nav-link active">
+                <a onclick="vchange(this.getElementsByTagName('p')[0].innerHTML)" href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Cat Facts</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="/Animals/Cats.html" class="nav-link">
+                <a onclick="vchange(this.getElementsByTagName('p')[0].innerHTML)" href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Cats</p>
                 </a>
               </li>
+
             </ul>
-          </li>
+          </li> -->
+          <!-- Animals End -->
+
+
+
+
+
 
         </ul>
       </nav>
@@ -203,9 +215,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
-<script src="/dist/js/underscore-min.js"></script>
-<script src="/dist/js/backbone-min.js"></script>
-<script src="/dist/js/pretty-json-min.js"></script>
 <script src="/dist/js/apidetails.js"></script>
 <script src="/dist/js/init.js"></script>
 
