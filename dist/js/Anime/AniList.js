@@ -1,22 +1,18 @@
 //Try working on Dogs now
-// alrighty 
-function highiq(url){
 var e =  document.getElementById('tempdiv');
 if (typeof(e) != 'undefined' && e != null)
 {
-    var el = 
-    document.getElementById("tempdiv");
+    var el = document.getElementById("tempdiv");
     el.parentNode.removeChild(el);
 
   // Exists.
 }
 var div = document.createElement("div");
 div.id = "tempdiv";
-
 // The following is the HTML for "Usage Examples"
 div.innerHTML = `<pre class="prettyprint" id="code">some other code I havent put in yet</pre>
 <pre class="prettyprint" id="code">$.ajax({
-    var url = "`+url+`" // set accordingly
+    var url = "https://api.thecatapi.com/v1/breeds" // set accordingly
     url: url,
     method: 'GET',
          success: function(msg) {
@@ -26,6 +22,14 @@ div.innerHTML = `<pre class="prettyprint" id="code">some other code I havent put
 });</pre>
 
 
+
+
+
+
+
+
+
+
 `;
 var element = document.getElementById("cexample");
 element.appendChild(div);
@@ -33,8 +37,8 @@ element.appendChild(div);
 refreshcode();
 
 $.ajax({
-    data: {id: 15125},
-    url: url,
+    //data: {day: day, month: month, year: year},
+    url: 'https://api.thecatapi.com/v1/breeds',
     method: 'GET', // or GET
          success: function(msg) {
             var obj = msg;
@@ -56,4 +60,4 @@ $.ajax({
 
 
 });
-}
+
