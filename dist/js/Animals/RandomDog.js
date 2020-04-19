@@ -9,7 +9,7 @@ if (typeof(e) != 'undefined' && e != null)
 var div = document.createElement("div");
 div.id = "tempdiv";
 // The following is the HTML for "Usage Examples"
-div.innerHTML = `<pre class="prettyprint" id="code">img id="image" src="https://random.dog/e07f1a96-7b99-4f0d-91db-00668ea34a90.jpg"</pre>`;
+div.innerHTML = `<pre class="prettyprint" id="code">img id="image" src="https://random.dog/woof.json"</pre>`;
 var element = document.getElementById("cexample");
 element.appendChild(div);
 //$.getScript("/dist/js/run_prettify.js");
