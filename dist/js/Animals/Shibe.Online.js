@@ -12,6 +12,10 @@ div.id = "tempdiv";
 div.innerHTML = `<pre class="prettyprint" id="code">img id="image" src="http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true"</pre>`;
 var element = document.getElementById("cexample");
 element.appendChild(div);
+// The following is the HTML for "Instructions"
+div.innerHTML = `<pre class="prettyprint" id="code">img id="image" src="http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true"</pre>`;
+var element = document.getElementById("cinstructions");
+element.appendChild(div);
 //$.getScript("/dist/js/run_prettify.js");
 refreshcode();         
 
