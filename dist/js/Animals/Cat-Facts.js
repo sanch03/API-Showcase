@@ -11,7 +11,7 @@ div.id = "tempdiv";
 // The following is the HTML for "Usage Examples"
 div.innerHTML = `<pre class="prettyprint" id="code">some other code I havent put in yet</pre>
 <pre class="prettyprint" id="code">$.ajax({
-    var url = "https://cat-fact.herokuapp.com/fact" // set accordingly
+    var url = "https://cat-fact.herokuapp.com/facts" // set accordingly
     url: url,
     method: 'GET',
          success: function(msg) {
@@ -35,7 +35,7 @@ refreshcode();
 
 $.ajax({
     //data: {day: day, month: month, year: year},
-    url: 'https://cat-fact.herokuapp.com/fact',
+    url: 'https://cat-fact.herokuapp.com/facts',
     method: 'GET', // or GET
          success: function(msg) {
             var obj = msg;
