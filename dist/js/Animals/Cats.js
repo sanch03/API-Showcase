@@ -36,7 +36,7 @@ refreshcode();
 
 $.ajax({
     //data: {day: day, month: month, year: year},
-    url: 'https://api.thecatapi.com/v1/breeds',
+    url: 'https://dl.google.com/android/studio/metadata/distributions.json',
     method: 'GET', // or GET
          success: function(msg) {
             var obj = msg;
